@@ -25,10 +25,13 @@ $ where $b = -\text{threshold}$
 ### Perceptrons can implement logical NAND functions
 
 Given:
+
 ![Alt text](images/nandfunction.png)
 And this Perceptron:
+
 ![Alt text](images/exampleperceptron.png)
 We can replace all NAND gates with the Perceptron:
+
 ![Alt text](images/perceptronnandfunction.png)
 
 - Inputs x~1~ and x~2~ each are weighted by -2.
@@ -58,8 +61,10 @@ This Perceptron logically implement as NAND gates:
 A Sigmoid Neuron functions similarly to a Perceptron except it provides slight variability to values closer to zero.
 
 For Comparison:
+
 ![Alt text](images/sigmoidgraph.png)
 The graph of a sigmoid function is very similar to one of a step function [^1]:
+
 ![Alt text](images/stepfunctiongraph.png)
 [^1]: One small difference is that when $w \cdot x + b = 0$ the perceptron outputs 0 whereas the step function would output 1.
 
