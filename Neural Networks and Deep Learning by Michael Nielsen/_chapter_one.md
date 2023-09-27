@@ -10,19 +10,9 @@
 - The Bias ($b$) is a value added to the weighted sum to increase the chance of the perceptron being greater than zero.
 
 Algebraically:
-$\text{output} =
-    \begin{cases}
-        0 &\text{if } \sum_jw_jx_j \leq \text{threshold} \\
-        1 &\text{if } \sum_jw_jx_j > \text{threshold}
-    \end{cases}
-$
+$\text{output} = \begin{cases} 0 &\text{if } \sum_jw_jx_j \leq \text{threshold} \\ 1 &\text{if } \sum_jw_jx_j > \text{threshold} \end{cases}$
 Alternatively:
-$\text{output} =
-    \begin{cases}
-        0 &\text{if } w_j \cdot x_j + b \leq 0 \\
-        1 &\text{if } w_j \cdot x_j + b > 0
-    \end{cases}
-$ where $b = -\text{threshold}$
+$\text{output} =\begin{cases}0 & \text{if } w_j \cdot x_j + b \leq 0 \\1 & \text{if } w_j \cdot x_j + b > 0 \end{cases}$ where $b = -\text{threshold}$
 
 ### Perceptrons can implement logical NAND functions
 
