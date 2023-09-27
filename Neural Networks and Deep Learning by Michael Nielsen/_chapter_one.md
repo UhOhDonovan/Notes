@@ -27,9 +27,11 @@ $ where $b = -\text{threshold}$
 Given:
 
 ![Alt text](images/nandfunction.png)
+
 And this Perceptron:
 
 ![Alt text](images/exampleperceptron.png)
+
 We can replace all NAND gates with the Perceptron:
 
 ![Alt text](images/perceptronnandfunction.png)
@@ -63,9 +65,11 @@ A Sigmoid Neuron functions similarly to a Perceptron except it provides slight v
 For Comparison:
 
 ![Alt text](images/sigmoidgraph.png)
+
 The graph of a sigmoid function is very similar to one of a step function [^1]:
 
 ![Alt text](images/stepfunctiongraph.png)
+
 [^1]: One small difference is that when $w \cdot x + b = 0$ the perceptron outputs 0 whereas the step function would output 1.
 
 The curve of $\sigma$ means that changes in the weights ($\Delta w$) or and in the bias ($\Delta b$) will produce a small change in output ($\Delta \text{output}$):
