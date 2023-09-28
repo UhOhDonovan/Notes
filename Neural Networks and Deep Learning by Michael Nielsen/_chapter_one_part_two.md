@@ -76,29 +76,3 @@ If a four neuron binary output were to be used, it would be less efficient, as t
 ![Alt text](images/digitaltobinarynetwork.png)
 
 Because I'm lazy, simply give a weight of 1 to the connection for each of its corresponding bits, and a bias of 1.
-
-## Learning with gradient descent
-
-The dataset used in the digit classification model is the [MNIST dataset](http://yann.lecun.com/exdb/mnist/). It contains tens of thousands of handwritten digits.
-
-- Handwriting samples from 250 people.
-- Half Census Bureau employees, and half high school students.
-- images are grayscale and 28x28 pixels in size.
-
-Use $x$ to denotate a training input. Each training input $x$ is treated as a 784 (28x28) dimensional vector. Eact entry represents the gray value for a single pixel. the desired output is denotated as $y = y(x)$ where $y$ is a 10-dimensional vector each index representing a digit. For example: If $x$ depicts a 6, then $y(x) = (0,0,0,0,0,0,1,0,0,0)^T$[^1]
-
-[^1]: T is the transpose operation.
-
-The *quadratic cost function* or *mean squared error* quantifies how well the network approximates $y(x)$ for all training inputs:
-$$C(w,b) = \cfrac{1}{2n}\sum_x||y(x)-a||^2$$
-
-- $w$ denotes the collection of all weights in the network, $b$ all the biases.
-- $n$ is the total number of training inputs.
-- $a$ is the vector of all outputs when $x$ is the input. $a$ depends on $x$, $w$, and $b$.
-- $||v||$ is the usual length function for a vector $\vec{v}$.[^2]
-
-[^2]: The length, norm, or magnitude of a vector is given by $\sqrt{\sum_nv_n^2}$
-
-$C(w, b)$ is always non-negative. $C(w, b) \approx 0$ when $y(x)$ is close to the output $a$ for all training inputs $x$. This indicates a well-trained algorithm. Therefore the aim of training is minimizing the cost function $C(w, b) \approx 0$. This algorithm used to achieve this is known as **gradient descent**.
-
-Minimizing the **quadratic cost* is only a minimization of a proxy measure. The accuracy of image classification can only be examined after the cost is minimized.
