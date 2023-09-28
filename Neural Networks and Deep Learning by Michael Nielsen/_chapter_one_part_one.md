@@ -1,4 +1,4 @@
-# Chapter One
+# Chapter One pt 1
 
 ## Perceptrons
 
@@ -76,6 +76,26 @@ Sigmoid outputs require some convention to properly interpret an output. For exa
 
 > Suppose we take all the weights and biases in a network of perceptrons, and multiply them by a positive constant, c>0. Show that the behaviour of the network doesn't change.
 
+The output of a perceptron is $\begin{cases} 0 &\text{if } \sum_jw_jx_j + b \leq 0 \\ 1 &\text{if } \sum_jw_jx_j + b > 0 \end{cases}$
+
+Multiplying all weights and biases by a positive constant c>0 results in the output of a perceptron being $\begin{cases} 0 &\text{if } \sum_jcw_jx_j + cb \leq 0 \\ 1 &\text{if } \sum_jcw_jx_j + cb > 0 \end{cases}$
+
+This can be written as $\begin{cases} 0 &\text{if }  c*[\sum_jw_jx_j + b] \leq 0 \\ 1 &\text{if } c*[\sum_jcw_jx_j + b] > 0 \end{cases}$
+
+If you devide both sides by the constant $c$, you will get the formula for the original output of the perceptron: $\begin{cases} 0 &\text{if } c*[\sum_jw_jx_j + b] / c \leq 0 / c\\ 1 &\text{if } c*[\sum_jcw_jx_j + b] / c > 0 / c \end{cases} = \begin{cases} 0 &\text{if } \sum_jw_jx_j + b \leq 0 \\ 1 &\text{if } \sum_jw_jx_j + b > 0 \end{cases}$
+
 ### Part II:
 
 > Suppose we have the same setup as the last problem - a network of perceptrons. Suppose also that the overall input to the network of perceptrons has been chosen. We won't need the actual input value, we just need the input to have been fixed. Suppose the weights and biases are such that w⋅x+b≠0 for the input x to any particular perceptron in the network. Now replace all the perceptrons in the network by sigmoid neurons, and multiply the weights and biases by a positive constant c>0. Show that in the limit as c→∞ the behaviour of this network of sigmoid neurons is exactly the same as the network of perceptrons. How can this fail when w⋅x+b=0 for one of the perceptrons?
+
+The output of each sigmoid neuron is $\sigma(x \cdot w + b) \not = 0$
+
+Now multiply the weights and biases of the sigmoid neuron by a positive constant c>0. The output of each sigmoid neuron is $\sigma(x \cdot cw + cb) \not = 0$
+
+The limit as $c \to \infty$ of the sigmoid neuron can be written as $\lim_{c \to \infty} \sigma(x \cdot cw + cb) = \lim_{c \to \infty} \cfrac{1}{1 + e^{-(x \cdot cw + cb)}}$
+
+By plugging in c = $\infty$ we get $\lim_{c \to \infty} \cfrac{1}{1 + e^{-(x \cdot \infty w + \infty b)}} = \cfrac{1}{1 + e^{-\infty}} = \cfrac{1}{1 + 0} = 1$
+
+We can infer from this information that as c approaches infinity, the output of the sigmoid neuron approaches 1, similar to the output of a perceptron.
+
+However, when $x \cdot w + b = 0$, the output of the sigmoid function $\sigma(z) = 0.5$. In this case, the behavior of the sigmoid network deviates from the perceptron network.
