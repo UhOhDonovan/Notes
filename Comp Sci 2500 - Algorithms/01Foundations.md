@@ -152,21 +152,3 @@ $c( 2^{\log_2n} - 1)(2^L-1) + 4^L * T(1) = $
 7. compute $10^n x_2 y_2 + 10^{n/2}[(x_1 + x_2)(y_1 + y_2) - x_1 y_1 - x_2 y_2] + x_1 y_1$ -> $c_4n$
 
 $T(n) = n^{\log_23}$
-
-## Asymptotic Notation or Big O notation
-
-How does runtime scale with growing input size?
-
-- Suppress lower-order items
-- Ignore constant factors
-
-### O-Notation (Asymptotic Upper Bound)
-
-DEF: $T(n) = O[F(n)]$ iff there are positive constants $(c,n_0)$ s.t. $T(n) \leq c * F(n)$ where $n \geq n_0$
-
-Ex: Alg 2 => $T(n) = [c + T(1)]n^2 - c'n = O(n^2)$
-
-Proof: 
-
-- If statement is true, there exists $(c_0, n_0)$ s.t. $[c' + T(1)] * n^2 - c'n \leq c_0 n^2$ whre $n \geq n_0$
-- Divide by $n^2$ on both sides: $[c' + T(1)] - c'/n \leq c_0$
